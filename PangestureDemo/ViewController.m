@@ -271,6 +271,11 @@
     [UIView animateWithDuration:0.4f animations:^{
         self.tableView.frame = frame;
         self.backgroundAlphaViewForView.alpha = 0;
+        
+        CGRect frameOfIndicator = frame;
+        frameOfIndicator.origin.y = frame.origin.y - kHeightIndicatorForTableViewView;
+        frameOfIndicator.size.height = kHeightIndicatorForTableViewView;
+        self.indicatorForTableViewView.frame = frameOfIndicator;
     }];
 }
 
